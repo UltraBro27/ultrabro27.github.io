@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gameshow</title>
+  <style>
+    :root{--base:#4eba7b;--base-dark:#37915f;--base-light:#7fe0a6;--muted:#eaf7ee}
+    body { font-family: Arial, Helvetica, sans-serif; background:var(--muted); margin:0; padding:40px; }
+    .wrap { display:flex; justify-content:center; }
+    table.board { border-collapse:collapse; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+  table.board th, table.board td { border:1px solid #dfe; padding:16px 22px; text-align:center; }
+    table.board th { background:var(--base-dark); color:white; font-weight:700; }
+    /* make numbers large and centered */
+  table.board td a { text-decoration:none; color:#072; display:flex; align-items:center; justify-content:center; width:100%; height:100%; font-size:26px; font-weight:700; }
+  table.board td { width:160px; height:90px; }
+  caption { margin-bottom:12px; font-size:42px; font-weight:600; }
+    /* chosen state */
+    .chosen { background:var(--base-light); color:#072; }
+    .chosen a { color:#072; }
+  /* reset button as a slightly larger rectangle in bottom-left */
+  .reset-btn { position:fixed; left:16px; bottom:16px; background:var(--base); border:none; width:72px; height:48px; border-radius:8px; cursor:pointer; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:20px; z-index:1000 }
+  .reset-btn:hover{filter:brightness(.95)}
+  @media (max-width:480px){ .reset-btn{ left:10px; bottom:10px; width:56px; height:40px; font-size:18px } }
+    @media (max-width:800px){ table.board td{ width:80px; padding:12px; } table.board td a{font-size:20px} }
+  </style>
+</head>
+<body>
+  <button class="reset-btn" id="reset" aria-label="Reset selections">⟲</button>
+  <div class="wrap">
+    <table class="board" aria-label="Gameshow board">
+      <caption>Gameshow Board</caption>
+      <thead>
+        <tr>
+          <th>Words</th>
+          <th>Who’s That Personemon</th>
+          <th>temp3</th>
+          <th>temp4</th>
+          <th>temp5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 6 numbered rows (1..6) per column -->
+        <!-- Row 1 -->
+        <tr>
+          <td data-id="temp1_1"><a href="temp1_1.html" data-id="temp1_1">1</a></td>
+          <td data-id="temp2_1"><a href="temp2_1.html" data-id="temp2_1">1</a></td>
+          <td data-id="temp3_1"><a href="temp3_1.html" data-id="temp3_1">1</a></td>
+          <td data-id="temp4_1"><a href="temp4_1.html" data-id="temp4_1">1</a></td>
+          <td data-id="temp5_1"><a href="temp5_1.html" data-id="temp5_1">1</a></td>
+        </tr>
+        <!-- Row 2 -->
+        <tr>
+          <td data-id="temp1_2"><a href="temp1_2.html" data-id="temp1_2">2</a></td>
+          <td data-id="temp2_2"><a href="temp2_2.html" data-id="temp2_2">2</a></td>
+          <td data-id="temp3_2"><a href="temp3_2.html" data-id="temp3_2">2</a></td>
+          <td data-id="temp4_2"><a href="temp4_2.html" data-id="temp4_2">2</a></td>
+          <td data-id="temp5_2"><a href="temp5_2.html" data-id="temp5_2">2</a></td>
+        </tr>
+        <!-- Row 3 -->
+        <tr>
+          <td data-id="temp1_3"><a href="temp1_3.html" data-id="temp1_3">3</a></td>
+          <td data-id="temp2_3"><a href="temp2_3.html" data-id="temp2_3">3</a></td>
+          <td data-id="temp3_3"><a href="temp3_3.html" data-id="temp3_3">3</a></td>
+          <td data-id="temp4_3"><a href="temp4_3.html" data-id="temp4_3">3</a></td>
+          <td data-id="temp5_3"><a href="temp5_3.html" data-id="temp5_3">3</a></td>
+        </tr>
+        <!-- Row 4 -->
+        <tr>
+          <td data-id="temp1_4"><a href="temp1_4.html" data-id="temp1_4">4</a></td>
+          <td data-id="temp2_4"><a href="temp2_4.html" data-id="temp2_4">4</a></td>
+          <td data-id="temp3_4"><a href="temp3_4.html" data-id="temp3_4">4</a></td>
+          <td data-id="temp4_4"><a href="temp4_4.html" data-id="temp4_4">4</a></td>
+          <td data-id="temp5_4"><a href="temp5_4.html" data-id="temp5_4">4</a></td>
+        </tr>
+        <!-- Row 5 -->
+        <tr>
+          <td data-id="temp1_5"><a href="temp1_5.html" data-id="temp1_5">5</a></td>
+          <td data-id="temp2_5"><a href="temp2_5.html" data-id="temp2_5">5</a></td>
+          <td data-id="temp3_5"><a href="temp3_5.html" data-id="temp3_5">5</a></td>
+          <td data-id="temp4_5"><a href="temp4_5.html" data-id="temp4_5">5</a></td>
+          <td data-id="temp5_5"><a href="temp5_5.html" data-id="temp5_5">5</a></td>
+        </tr>
+        <!-- Row 6 -->
+        <tr>
+          <td data-id="temp1_6"><a href="temp1_6.html" data-id="temp1_6">6</a></td>
+          <td data-id="temp2_6"><a href="temp2_6.html" data-id="temp2_6">6</a></td>
+          <td data-id="temp3_6"><a href="temp3_6.html" data-id="temp3_6">6</a></td>
+          <td data-id="temp4_6"><a href="temp4_6.html" data-id="temp4_6">6</a></td>
+          <td data-id="temp5_6"><a href="temp5_6.html" data-id="temp5_6">6</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    (function(){
+      const STORAGE_KEY = 'gameshow_chosen';
+      const chosen = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+
+      function mark(id){
+        const td = document.querySelector('[data-id="'+id+'"]');
+        if(td) td.classList.add('chosen');
+      }
+
+      function unmarkAll(){
+        document.querySelectorAll('td.chosen').forEach(td=>td.classList.remove('chosen'));
+      }
+
+      // restore on load
+      chosen.forEach(mark);
+
+      // attach click handlers to links to add chosen before navigation
+      document.querySelectorAll('table.board a[data-id]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          // add to storage
+          try{ chosen.add(this.dataset.id); localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(chosen))); }catch(err){}
+          // visual mark (parent td)
+          const p = this.closest('td'); if(p) p.classList.add('chosen');
+          // navigation proceeds normally
+        })
+      });
+
+      // reset button
+      document.getElementById('reset').addEventListener('click', function(){
+        localStorage.removeItem(STORAGE_KEY);
+        chosen.clear();
+        unmarkAll();
+      });
+    })();
+  </script>
+</body>
+</html>
